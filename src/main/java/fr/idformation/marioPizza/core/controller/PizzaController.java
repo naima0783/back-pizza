@@ -8,20 +8,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.idformation.marioPizza.Application;
 import fr.idformation.marioPizza.core.dto.PizzaDTO;
 import fr.idformation.marioPizza.core.dto.mapper.PizzaMapper;
 import fr.idformation.marioPizza.core.service.impl.PizzaService;
 
 @RestController
 @RequestMapping("/pizza")
-@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:3000", maxAge = Application.MAX)
 public class PizzaController {
 
 	@Autowired
 	private PizzaService pizzaService;
 
+	/**
+	 * Getter of all the pizza.
+	 *
+	 * @return
+	 */
 	@GetMapping("/all")
-	// @PreAuthorize("hasAnyRole( 'ROLE_ADMIN')")
 	public List<PizzaDTO> getAll() {
 		return PizzaMapper.pizzasToDtos(pizzaService.getAll());
 	}

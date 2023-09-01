@@ -19,8 +19,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	private UserRepository userRepository;
 
 	@Override
-	public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
-		User user = userRepository.findByUsername(username)
+	public UserDetails loadUserByUsername(final String phonenumber) throws UsernameNotFoundException {
+		User user = userRepository.findByPhonenumber(phonenumber)
 				.orElseThrow(() -> new UsernameNotFoundException("User NOT Found"));
 		return UserMapper.userToPrincipal(user);
 	}
@@ -31,8 +31,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	 * @return the detail of the given user
 	 * @throws UsernameNotFoundException
 	 */
-	public User loadUserDetails(final String username) throws UsernameNotFoundException {
-		User user = userRepository.findByUsername(username)
+	public User loadUserDetails(final String phonenumber) throws UsernameNotFoundException {
+		User user = userRepository.findByPhonenumber(phonenumber)
 				.orElseThrow(() -> new UsernameNotFoundException("User NOT Found"));
 		return user;
 	}

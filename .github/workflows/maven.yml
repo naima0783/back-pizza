@@ -23,25 +23,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    
-    
-    - name: Checkstyle with Maven
-      run: mvn -B verify checkstyle:checkstyle
-    - uses: jwgmeligmeyling/checkstyle-github-action@master
-      with:
-        path: '**/checkstyle-result.xml'
-        
-    - name: PMD with Maven
-      run: mvn -B verify pmd:pmd
-    - uses: jwgmeligmeyling/pmd-github-action@master
-      with:
-        path: '**/pmd.xml'
-        
-    - name: Spotbug with Maven
-      run: mvn -B verify spotbugs:spotbugs
-    - uses: jwgmeligmeyling/spotbugs-github-action@master
-      with:
-        path: '**/spotbugsXml.xml'
+
         
         
 

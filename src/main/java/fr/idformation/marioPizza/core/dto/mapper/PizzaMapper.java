@@ -34,7 +34,7 @@ public class PizzaMapper {
 	 * @param pizza the pizza.
 	 * @return the dto's pizza.
 	 */
-	private static PizzaDTO pizzaToDto(final Pizza pizza) {
+	public static PizzaDTO pizzaToDto(final Pizza pizza) {
 		PizzaDTO dto = null;
 
 		if (pizza != null) {

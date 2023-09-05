@@ -30,4 +30,9 @@ public class PizzaService implements IPizzaService {
 		return pizzaRepo.findAll();
 	}
 
+	public Pizza getOne(Long id) {
+		return pizzaRepo.findById(id).get();
+
+	}
+
 }

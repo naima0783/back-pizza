@@ -9,11 +9,12 @@ import fr.idformation.marioPizza.core.dto.PizzaDTO;
 public class PizzaMapper {
 
 	/**
-	 * 
-	 * @param all
-	 * @return
+	 * transform a list of pizza to a list of dto's pizza.
+	 *
+	 * @param all the pizza
+	 * @return the dto's pizza
 	 */
-	public static List<PizzaDTO> pizzasToDtos(List<Pizza> all) {
+	public static List<PizzaDTO> pizzasToDtos(final List<Pizza> all) {
 		List<PizzaDTO> dtos = null;
 
 		if (all != null) {
@@ -28,11 +29,12 @@ public class PizzaMapper {
 	}
 
 	/**
-	 * 
-	 * @param pizza
-	 * @return
+	 * transform a pizza to a dto's pizza.
+	 *
+	 * @param pizza the pizza.
+	 * @return the dto's pizza.
 	 */
-	private static PizzaDTO pizzaToDto(Pizza pizza) {
+	private static PizzaDTO pizzaToDto(final Pizza pizza) {
 		PizzaDTO dto = null;
 
 		if (pizza != null) {

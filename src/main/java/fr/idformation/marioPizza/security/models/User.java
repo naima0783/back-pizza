@@ -5,6 +5,7 @@ import java.util.Set;
 
 import org.springframework.lang.NonNull;
 
+import fr.idformation.marioPizza.Application;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -32,7 +33,7 @@ public class User {
 	 * user's phone number.
 	 */
 	@NonNull
-	@Size(max = 20)
+	@Size(max = Application.COLUMN20)
 	private String phonenumber;
 
 	/**

@@ -19,11 +19,21 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
+	/**
+	 * the token in the header.
+	 */
 	@Value("${app.jwtTokenHeader}")
 	private String tokenHeader;
 
+	/**
+	 * the token provider .
+	 */
 	@Autowired
 	private JwtProvider tokenProvider;
+
+	/**
+	 * the user details service.
+	 */
 	@Autowired
 	private UserDetailsService userDetailsService;
 

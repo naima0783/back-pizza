@@ -18,13 +18,16 @@ import fr.idformation.marioPizza.core.service.impl.PizzaService;
 @CrossOrigin(origins = "http://localhost:3000", maxAge = Application.MAX)
 public class PizzaController {
 
+	/**
+	 * Pizza's service.
+	 */
 	@Autowired
 	private PizzaService pizzaService;
 
 	/**
 	 * Getter of all the pizza.
 	 *
-	 * @return
+	 * @return all the pizza
 	 */
 	@GetMapping("/all")
 	public List<PizzaDTO> getAll() {

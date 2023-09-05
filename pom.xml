@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>fr.idformation</groupId>
-	<artifactId>mario-s_pizza</artifactId>
+	<artifactId>marioPizza</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mario-s_pizza</name>
+	<name>marioPizza</name>
 	<description>application mobile de réservation de pizza</description>
 	<properties>
 		<java.version>17</java.version>

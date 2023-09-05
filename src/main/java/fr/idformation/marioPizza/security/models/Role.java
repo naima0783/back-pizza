@@ -1,5 +1,6 @@
 package fr.idformation.marioPizza.security.models;
 
+import fr.idformation.marioPizza.Application;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -12,6 +13,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "roles")
 public class Role {
+
 	/**
 	 * role's id.
 	 */
@@ -22,7 +24,7 @@ public class Role {
 	 * role's name.
 	 */
 	@Enumerated(EnumType.STRING)
-	@Column(length = 20)
+	@Column(length = Application.COLUMN20)
 	private RoleName name;
 
 	/**

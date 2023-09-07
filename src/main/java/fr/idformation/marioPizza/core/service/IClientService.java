@@ -7,10 +7,10 @@ public interface IClientService {
 	/**
 	 * getter of one client .
 	 *
-	 * @param id the client's id
+	 * @param phone the client's phone number
 	 * @return the client
 	 */
-	Client getOne(Long id);
+	Client getOne(String phone);
 
 	/**
 	 * save a new client.

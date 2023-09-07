@@ -32,15 +32,15 @@ public class ClientController {
 	/**
 	 * Getter of one the pizza.
 	 *
-	 * @param id       the pizza's id
+	 * @param phone    the pizza's phone number
 	 * @param response the http servlet response .
 	 *
 	 * @return all the pizza
 	 */
-	@GetMapping("/{id}")
-	public ClientDTO getOne(final @PathVariable Long id, final HttpServletResponse response) {
+	@GetMapping("/{phone}")
+	public ClientDTO getOne(final @PathVariable String phone, final HttpServletResponse response) {
 		try {
-			return ClientMapper.clientToDto(clientService.getOne(id));
+			return ClientMapper.clientToDto(clientService.getOne(phone));
 		} catch (NoSuchElementException e) {
 			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 			return null;

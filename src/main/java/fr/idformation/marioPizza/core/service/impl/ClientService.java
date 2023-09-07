@@ -24,8 +24,8 @@ public class ClientService implements IClientService {
 	private IClientRepository clientRepo;
 
 	@Override
-	public Client getOne(final Long id) {
-		return clientRepo.findById(id).get();
+	public Client getOne(final String phone) {
+		return clientRepo.findByPhonenumber(phone);
 	}
 
 	@Override

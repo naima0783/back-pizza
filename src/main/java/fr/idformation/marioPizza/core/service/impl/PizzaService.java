@@ -30,6 +30,7 @@ public class PizzaService implements IPizzaService {
 		return pizzaRepo.findAll();
 	}
 
+	@Override
 	public Pizza getOne(Long id) {
 		return pizzaRepo.findById(id).get();
 

@@ -13,4 +13,12 @@ public interface IPizzaService {
 	 */
 	List<Pizza> getAll();
 
+	/**
+	 * service to get of one pizza.
+	 *
+	 * @param id one pizza's id
+	 * @return the pizza
+	 */
+	Pizza getOne(Long id);
+
 }

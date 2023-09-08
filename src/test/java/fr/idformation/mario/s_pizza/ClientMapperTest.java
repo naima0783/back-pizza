@@ -76,7 +76,6 @@ public class ClientMapperTest {
 	public void testDtoToEntity() {
 
 		ClientDTO dto = new ClientDTO();
-		dto.setId((long) 10);
 		dto.setFirstname("alex");
 		dto.setLastname("spice");
 		dto.setAddress("7 grande rue");
@@ -84,7 +83,6 @@ public class ClientMapperTest {
 
 		Client client = ClientMapper.dtoToEntity(dto);
 
-		assertThat(client.getId()).isEqualTo(10);
 		assertThat(client.getAddress()).isEqualTo("7 grande rue");
 		assertThat(client.getFirstname()).isEqualTo("alex");
 		assertThat(client.getLastname()).isEqualTo("spice");

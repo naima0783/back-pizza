@@ -31,7 +31,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "http://localhost:3000", maxAge = Application.MAX)
+@CrossOrigin(origins = "*", maxAge = Application.MAX)
 public final class AuthController {
 
 	/** token header to use in JWT. */

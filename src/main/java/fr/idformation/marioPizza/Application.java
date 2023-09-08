@@ -9,7 +9,7 @@ public class Application {
 	/**
 	 * Max Age.
 	 */
-	public static final long MAX = 3600;
+	public static final long MAX = 4000;
 
 	/**
 	 * Column = 20.

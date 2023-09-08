@@ -3,14 +3,12 @@ package fr.idformation.mario.s_pizza;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
 
 import fr.idformation.marioPizza.core.domain.Pizza;
 import fr.idformation.marioPizza.core.dto.PizzaDTO;
 import fr.idformation.marioPizza.core.dto.mapper.PizzaMapper;
 
-@SpringBootTest
 public class PizzaMapperTest {
 	/**
 	 * Tests if a null object turns into a null dto

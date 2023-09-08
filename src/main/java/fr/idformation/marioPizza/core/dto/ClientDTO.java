@@ -1,5 +1,7 @@
 package fr.idformation.marioPizza.core.dto;
 
+import java.util.List;
+
 import fr.idformation.marioPizza.core.domain.Client;
 
 public class ClientDTO {
@@ -32,6 +34,22 @@ public class ClientDTO {
 	 * clientDto's address.
 	 */
 	private String address;
+
+	private List<OrderDTO> orders;
+
+	/**
+	 * @return the orders
+	 */
+	public List<OrderDTO> getOrders() {
+		return orders;
+	}
+
+	/**
+	 * @param orders the orders to set
+	 */
+	public void setOrders(List<OrderDTO> orders) {
+		this.orders = orders;
+	}
 
 	/**
 	 * The clientDto's constructor.

@@ -27,7 +27,7 @@ public class PizzaDTO {
 	/**
 	 * pizza's price.
 	 */
-	private String price;
+	private Double price;
 
 	/**
 	 * Initializer of the DTO's pizza .
@@ -39,7 +39,7 @@ public class PizzaDTO {
 		this.description = pizza.getDescription();
 		this.image = pizza.getImage();
 		this.name = pizza.getName();
-		this.price = pizza.getName();
+		this.price = pizza.getPrice();
 	}
 
 	/**
@@ -80,7 +80,7 @@ public class PizzaDTO {
 	/**
 	 * @return the price
 	 */
-	public String getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
@@ -115,7 +115,7 @@ public class PizzaDTO {
 	/**
 	 * @param pPrice the price to set
 	 */
-	public void setPrice(final String pPrice) {
+	public void setPrice(final Double pPrice) {
 		this.price = pPrice;
 	}
 

@@ -16,8 +16,7 @@ public interface IClientService {
 	 * save a new client.
 	 *
 	 * @param client the client
-	 * @return the new client
 	 */
-	Client save(Client client);
+	void save(Client client);
 
 }

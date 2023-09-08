@@ -41,7 +41,7 @@ public class Pizza {
 	 * pizza's price.
 	 */
 	@Column(name = "price")
-	private String price;
+	private Double price;
 
 	/**
 	 * Initializer of the pizza .
@@ -60,7 +60,7 @@ public class Pizza {
 	 * @param pPrice
 	 */
 	public Pizza(final Long pId, final String pName, final String pDescription, final String pImage,
-			final String pPrice) {
+			final Double pPrice) {
 		super();
 		this.id = pId;
 		this.name = pName;
@@ -100,7 +100,7 @@ public class Pizza {
 	/**
 	 * @return the price
 	 */
-	public String getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
@@ -135,7 +135,7 @@ public class Pizza {
 	/**
 	 * @param pPrice the price to set
 	 */
-	public void setPrice(final String pPrice) {
+	public void setPrice(final Double pPrice) {
 		this.price = pPrice;
 	}
 

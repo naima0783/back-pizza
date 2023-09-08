@@ -29,8 +29,8 @@ public class ClientService implements IClientService {
 	}
 
 	@Override
-	public Client save(final Client client) {
-		return clientRepo.save(client);
+	public void save(final Client client) {
+		clientRepo.save(client);
 	}
 
 }

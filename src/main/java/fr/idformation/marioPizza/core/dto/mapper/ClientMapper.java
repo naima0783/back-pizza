@@ -1,7 +1,11 @@
 package fr.idformation.marioPizza.core.dto.mapper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import fr.idformation.marioPizza.core.domain.Client;
 import fr.idformation.marioPizza.core.dto.ClientDTO;
+import fr.idformation.marioPizza.core.dto.OrderDTO;
 
 /**
  * @author naima
@@ -15,16 +19,26 @@ public class ClientMapper {
 	 * @param client the client
 	 * @return the client'dto
 	 */
-	public static ClientDTO clientToDto(final Client client) {
+	public static ClientDTO clientToDto(Client cust) {
+		return clientToDto(cust, true);
+	}
+
+	public static ClientDTO clientToDto(Client client, boolean addOrder) {
+
 		ClientDTO dto = null;
+		List<OrderDTO> list;
 
 		if (client != null) {
 			dto = new ClientDTO(client);
+			list = new ArrayList<>();
 
+			if (addOrder) {
+				// for (Order order : client.getOrders()) {
+				// list.add(OrderMapper.orderToDto(order, false));
+			}
 		}
 
 		return dto;
-
 	}
 
 	/**

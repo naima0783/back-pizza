@@ -71,6 +71,12 @@ public class Client {
 	private String address;
 
 	/**
+	 * list of all his commande.
+	 *
+	 * @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE) private
+	 *                     List<Order> orders;
+	 */
+	/**
 	 * @return the id
 	 */
 	public Long getId() {
@@ -146,6 +152,19 @@ public class Client {
 	public String getAddress() {
 		return address;
 	}
+
+	/**
+	 * @return the orders
+	 *
+	 *         public List<Order> getOrders() { return orders; }
+	 */
+
+	/**
+	 * @param pOrders the orders to set
+	 *
+	 *                public void setOrders(final List<Order> pOrders) { this.orders
+	 *                = pOrders; }
+	 */
 
 	/**
 	 * @param pId the id to set

@@ -45,4 +45,21 @@ public class PizzaMapper {
 		return dto;
 	}
 
+	public static Pizza dtoToPizz(PizzaDTO dto) {
+		Pizza pizza = null;
+
+		if (dto != null) {
+			pizza = new Pizza();
+			pizza.setId(dto.getId());
+
+			pizza.setName(dto.getName());
+			pizza.setDescription(dto.getDescription());
+			pizza.setImage(dto.getImage());
+			pizza.setPrice(dto.getPrice());
+
+		}
+		return pizza;
+
+	}
+
 }

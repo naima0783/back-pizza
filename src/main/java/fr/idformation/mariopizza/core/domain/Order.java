@@ -125,4 +125,18 @@ public class Order {
 		this.total = total;
 	}
 
+	/**
+	 * @return the orderlines
+	 */
+	public List<OrderLine> getOrderlines() {
+		return orderlines;
+	}
+
+	/**
+	 * @param orderlines the orderlines to set
+	 */
+	public void setOrderlines(List<OrderLine> orderlines) {
+		this.orderlines = orderlines;
+	}
+
 }

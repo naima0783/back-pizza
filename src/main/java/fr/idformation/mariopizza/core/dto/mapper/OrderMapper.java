@@ -26,6 +26,11 @@ public class OrderMapper {
 			order.setUser(UserMapper.dtoToEntity(dto.getUser()));
 			order.setTotal(dto.getTotal());
 
+			if (addOrderLine) {
+				order.setOrderlines(OrderlineMapper.dtoToOrderLine(dto.getOrderline(), false));
+
+			}
+
 		}
 		return order;
 	}

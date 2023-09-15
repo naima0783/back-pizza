@@ -1,5 +1,7 @@
 package fr.idformation.mariopizza.core.dto;
 
+import java.util.List;
+
 import fr.idformation.mariopizza.core.domain.Order;
 import fr.idformation.mariopizza.security.Dto.UserDto;
 
@@ -27,6 +29,25 @@ public class OrderDTO {
 	 */
 	public void setUser(UserDto user) {
 		this.user = user;
+	}
+
+	/**
+	 * 
+	 */
+	private List<OrderlineDTO> orderline;
+
+	/**
+	 * @return the orderline
+	 */
+	public List<OrderlineDTO> getOrderline() {
+		return orderline;
+	}
+
+	/**
+	 * @param orderline the orderline to set
+	 */
+	public void setOrderline(List<OrderlineDTO> orderline) {
+		this.orderline = orderline;
 	}
 
 	/**

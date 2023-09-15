@@ -31,7 +31,7 @@ public class OrderLineController {
 	@PostMapping("/save")
 	public boolean save(@RequestBody final OrderlineDTO orderline) {
 		try {
-			orderlineService.save(OrderlineMapper.dtoToEntity(orderline));
+			orderlineService.save(OrderlineMapper.dtoToOrderLine(orderline));
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();

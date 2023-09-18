@@ -8,7 +8,13 @@ import fr.idformation.mariopizza.core.dto.OrderlineDTO;
 
 public class OrderlineMapper {
 
-	public static OrderLine dtoToOrderLine(OrderlineDTO dto) {
+	/**
+	 * transform from an orderline the college.
+	 *
+	 * @param dto the dto to transfor
+	 * @return the orderLine
+	 */
+	public static OrderLine dtoToOrderLine(final OrderlineDTO dto) {
 		OrderLine entity = null;
 
 		if (dto != null) {
@@ -22,7 +28,14 @@ public class OrderlineMapper {
 		return entity;
 	}
 
-	public static List<OrderLine> dtoToOrderLine(List<OrderlineDTO> orderlines, boolean b) {
+	/**
+	 * transform a list of orderlineDTO to a list of orderline. *
+	 *
+	 * @param orderlines the orderlines's DTO
+	 * @param b          boolean if we add the order
+	 * @return the list of orderLine
+	 */
+	public static List<OrderLine> dtoToOrderLine(final List<OrderlineDTO> orderlines, final boolean b) {
 		List<OrderLine> dtos = null;
 
 		if (orderlines != null) {

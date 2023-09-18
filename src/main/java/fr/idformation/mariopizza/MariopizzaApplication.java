@@ -6,7 +6,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MariopizzaApplication {
 
-	public static void main(String[] args) {
+	/**
+	 * max age of cross origin.
+	 */
+	public static final int AGE_MAX = 3600;
+
+	/**
+	 * the main method to call te pizza's app .
+	 *
+	 * @param args
+	 */
+	public static void main(final String[] args) {
 		SpringApplication.run(MariopizzaApplication.class, args);
 	}
 

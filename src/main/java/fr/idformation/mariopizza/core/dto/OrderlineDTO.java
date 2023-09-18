@@ -24,7 +24,7 @@ public class OrderlineDTO {
 	private int quantite;
 
 	/**
-	 * 
+	 * the initializer of orderline's dto .
 	 */
 	public OrderlineDTO() {
 		super();
@@ -32,12 +32,11 @@ public class OrderlineDTO {
 	}
 
 	/**
-	 * @param id
-	 * @param order
-	 * @param pizza
-	 * @param quantite
+	 * the initializer of orderline's dto.
+	 *
+	 * @param orderline the orderline to transform to dto .
 	 */
-	public OrderlineDTO(OrderLine orderline) {
+	public OrderlineDTO(final OrderLine orderline) {
 		super();
 		this.id = orderline.getId();
 
@@ -76,30 +75,30 @@ public class OrderlineDTO {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param pId the id to set
 	 */
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(final Long pId) {
+		this.id = pId;
 	}
 
 	/**
-	 * @param order the order to set
+	 * @param pOrder the order to set
 	 */
-	public void setOrder(OrderDTO order) {
-		this.order = order;
+	public void setOrder(final OrderDTO pOrder) {
+		this.order = pOrder;
 	}
 
 	/**
-	 * @param pizza the pizza to set
+	 * @param pPizza the pizza to set
 	 */
-	public void setPizza(PizzaDTO pizza) {
-		this.pizza = pizza;
+	public void setPizza(final PizzaDTO pPizza) {
+		this.pizza = pPizza;
 	}
 
 	/**
-	 * @param quantite the quantite to set
+	 * @param pQuantite the quantite to set
 	 */
-	public void setQuantite(int quantite) {
-		this.quantite = quantite;
+	public void setQuantite(final int pQuantite) {
+		this.quantite = pQuantite;
 	}
 }

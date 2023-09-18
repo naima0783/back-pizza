@@ -39,6 +39,9 @@ public class Order {
 	@Column(name = "date")
 	private String date;
 
+	/**
+	 * list of all the order's orderline.
+	 */
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<OrderLine> orderlines;
 
@@ -49,17 +52,19 @@ public class Order {
 	private Float total;
 
 	/**
-	 * @param id
-	 * @param user
-	 * @param date
-	 * @param total
+	 * the initializer of the user .
+	 *
+	 * @param pId    the id
+	 * @param pUser  the order's user
+	 * @param pDate  the order's date
+	 * @param pTotal the order's total
 	 */
-	public Order(Long id, User user, String date, Float total) {
+	public Order(final Long pId, final User pUser, final String pDate, final Float pTotal) {
 		super();
-		this.id = id;
-		this.user = user;
-		this.date = date;
-		this.total = total;
+		this.id = pId;
+		this.user = pUser;
+		this.date = pDate;
+		this.total = pTotal;
 	}
 
 	/**
@@ -70,20 +75,22 @@ public class Order {
 	}
 
 	/**
-	 * @param user the user to set
+	 * @param pUser the user to set
 	 */
-	public void setUser(User user) {
-		this.user = user;
+	public void setUser(final User pUser) {
+		this.user = pUser;
 	}
 
 	/**
-	 * 
+	 * the initializer of the user .
 	 */
 	public Order() {
 		super();
 	}
 
 	/**
+	 * getter of the id.
+	 *
 	 * @return the id
 	 */
 	public Long getId() {
@@ -91,6 +98,8 @@ public class Order {
 	}
 
 	/**
+	 * getter of order's date .
+	 *
 	 * @return the date
 	 */
 	public String getDate() {
@@ -98,6 +107,8 @@ public class Order {
 	}
 
 	/**
+	 * Getter of total .
+	 *
 	 * @return the total
 	 */
 	public Float getTotal() {
@@ -105,24 +116,24 @@ public class Order {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param pId the id to set
 	 */
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(final Long pId) {
+		this.id = pId;
 	}
 
 	/**
-	 * @param date the date to set
+	 * @param pDate the date to set
 	 */
-	public void setDate(String date) {
-		this.date = date;
+	public void setDate(final String pDate) {
+		this.date = pDate;
 	}
 
 	/**
-	 * @param total the total to set
+	 * @param pTotal the total to set
 	 */
-	public void setTotal(Float total) {
-		this.total = total;
+	public void setTotal(final Float pTotal) {
+		this.total = pTotal;
 	}
 
 	/**
@@ -133,10 +144,10 @@ public class Order {
 	}
 
 	/**
-	 * @param orderlines the orderlines to set
+	 * @param pOrderlines the orderlines to set
 	 */
-	public void setOrderlines(List<OrderLine> orderlines) {
-		this.orderlines = orderlines;
+	public void setOrderlines(final List<OrderLine> pOrderlines) {
+		this.orderlines = pOrderlines;
 	}
 
 }

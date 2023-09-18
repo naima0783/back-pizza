@@ -7,17 +7,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.idformation.mariopizza.MariopizzaApplication;
 import fr.idformation.mariopizza.core.dto.OrderlineDTO;
 import fr.idformation.mariopizza.core.dto.mapper.OrderlineMapper;
 import fr.idformation.mariopizza.core.service.impl.OrderLineService;
 
 @RestController
 @RequestMapping("/orderline")
-@CrossOrigin(origins = { "http://localhost:3000", "http://192.168.1.117:8081" }, maxAge = 3600)
+@CrossOrigin(origins = { "http://localhost:3000", "http://192.168.1.117:8081" }, maxAge = MariopizzaApplication.AGE_MAX)
 public class OrderLineController {
 
 	/**
-	 * order's service.
+	 * order line's service.
 	 */
 	@Autowired
 	private OrderLineService orderlineService;
@@ -25,7 +26,7 @@ public class OrderLineController {
 	/**
 	 * Creation of an order.
 	 *
-	 * @param order the order
+	 * @param orderline the order line
 	 * @return true if succeed
 	 */
 	@PostMapping("/save")

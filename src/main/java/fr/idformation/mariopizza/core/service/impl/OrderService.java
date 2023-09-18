@@ -10,11 +10,14 @@ import fr.idformation.mariopizza.core.service.IOrderService;
 @Service
 public class OrderService implements IOrderService {
 
+	/**
+	 * the order repository .
+	 */
 	@Autowired
 	private IOrderRepository orderRepo;
 
 	@Override
-	public void save(Order order) {
+	public void save(final Order order) {
 		orderRepo.save(order);
 	}
 

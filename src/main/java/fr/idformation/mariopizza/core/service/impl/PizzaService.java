@@ -12,6 +12,9 @@ import fr.idformation.mariopizza.core.service.IPizzaService;
 @Service
 public class PizzaService implements IPizzaService {
 
+	/**
+	 * the pizza's repository .
+	 */
 	@Autowired
 	private IPizzaRepository pizzaRepo;
 

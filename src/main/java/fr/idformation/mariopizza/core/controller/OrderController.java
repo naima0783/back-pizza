@@ -8,13 +8,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.idformation.mariopizza.MariopizzaApplication;
 import fr.idformation.mariopizza.core.dto.OrderDTO;
 import fr.idformation.mariopizza.core.dto.mapper.OrderMapper;
 import fr.idformation.mariopizza.core.service.impl.OrderService;
 
 @RestController
 @RequestMapping("/order")
-@CrossOrigin(origins = { "http://192.168.1.117:8081", "http://192.168.1.117:8081" }, maxAge = 3600)
+@CrossOrigin(origins = { "http://192.168.1.117:8081",
+		"http://192.168.1.117:8081" }, maxAge = MariopizzaApplication.AGE_MAX)
 public class OrderController {
 
 	/**

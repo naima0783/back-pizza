@@ -42,7 +42,7 @@ public class OrderLine {
 	private int quantite;
 
 	/**
-	 * 
+	 * the initializer of orderliness .
 	 */
 	public OrderLine() {
 		super();
@@ -77,31 +77,35 @@ public class OrderLine {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param pId the id to set
 	 */
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(final Long pId) {
+		this.id = pId;
 	}
 
 	/**
-	 * @param order the order to set
+	 * Setter of the order.
+	 *
+	 * @param pOrder the order to set
 	 */
-	public void setOrder(Order order) {
-		this.order = order;
+	public void setOrder(final Order pOrder) {
+		this.order = pOrder;
 	}
 
 	/**
-	 * @param pizza the pizza to set
+	 * setter of the pizza.
+	 *
+	 * @param pPizza the pizza to set
 	 */
-	public void setPizza(Pizza pizza) {
-		this.pizza = pizza;
+	public void setPizza(final Pizza pPizza) {
+		this.pizza = pPizza;
 	}
 
 	/**
-	 * @param quantite the quantite to set
+	 * @param pQuantite the quantite to set
 	 */
-	public void setQuantite(int quantite) {
-		this.quantite = quantite;
+	public void setQuantite(final int pQuantite) {
+		this.quantite = pQuantite;
 	}
 
 }

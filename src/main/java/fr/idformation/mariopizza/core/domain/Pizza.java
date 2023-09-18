@@ -47,7 +47,7 @@ public class Pizza {
 	private Double price;
 
 	/**
-	 * 
+	 * the orderline's la pause .
 	 */
 	@OneToMany(mappedBy = "pizza")
 	private List<OrderLine> orderLines;
@@ -62,11 +62,11 @@ public class Pizza {
 	/**
 	 * Initializer of the pizza.
 	 *
-	 * @param pId
-	 * @param pName
-	 * @param pDescription
-	 * @param pImage
-	 * @param pPrice
+	 * @param pId          the order's Id
+	 * @param pName        the order's name
+	 * @param pDescription pizza's description
+	 * @param pImage       pizza's image
+	 * @param pPrice       pizza's price
 	 */
 	public Pizza(final Long pId, final String pName, final String pDescription, final String pImage,
 			final Double pPrice) {
@@ -79,6 +79,8 @@ public class Pizza {
 	}
 
 	/**
+	 * getter of order'id.
+	 *
 	 * @return the id
 	 */
 	public Long getId() {
@@ -86,6 +88,8 @@ public class Pizza {
 	}
 
 	/**
+	 * getter of the name.
+	 *
 	 * @return the name
 	 */
 	public String getName() {
@@ -114,38 +118,40 @@ public class Pizza {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param pId the id to set
 	 */
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(final Long pId) {
+		this.id = pId;
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param pName the name to set
 	 */
-	public void setName(String name) {
-		this.name = name;
+	public void setName(final String pName) {
+		this.name = pName;
 	}
 
 	/**
-	 * @param description the description to set
+	 * setter of pizza's description.
+	 *
+	 * @param pDescription the description to set
 	 */
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDescription(final String pDescription) {
+		this.description = pDescription;
 	}
 
 	/**
-	 * @param image the image to set
+	 * @param pImage the image to set
 	 */
-	public void setImage(String image) {
-		this.image = image;
+	public void setImage(final String pImage) {
+		this.image = pImage;
 	}
 
 	/**
-	 * @param price the price to set
+	 * @param pPrice the price to set
 	 */
-	public void setPrice(Double price) {
-		this.price = price;
+	public void setPrice(final Double pPrice) {
+		this.price = pPrice;
 	}
 
 }

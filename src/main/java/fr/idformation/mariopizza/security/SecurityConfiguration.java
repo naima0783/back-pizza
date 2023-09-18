@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -33,24 +34,21 @@ public class SecurityConfiguration {
 	}
 
 	@Bean
-	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	public SecurityFilterChain filterChain(final HttpSecurity http) throws Exception {
 
-		http.cors();
-		http.csrf().disable();
+		http.cors(Customizer.withDefaults());
+		http.csrf((csrf) -> csrf.disable());
 
-		http.exceptionHandling().authenticationEntryPoint((req, res, ex) -> res
-				.sendError(HttpServletResponse.SC_UNAUTHORIZED, "UNAUTHORIZED : " + ex.getMessage()));
+		http.exceptionHandling((exceptionHandling) -> exceptionHandling.authenticationEntryPoint((req, res, ex) -> res
+				.sendError(HttpServletResponse.SC_UNAUTHORIZED, "UNAUTHORIZED : " + ex.getMessage())));
 
-		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		http.sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
 		http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
 
 		// set required security based on request
-		http.authorizeHttpRequests(req -> req.requestMatchers("/ping").permitAll());
 		http.authorizeHttpRequests(req -> req.requestMatchers("/auth/**").permitAll());
-		http.authorizeHttpRequests(req -> req.requestMatchers("/settings/logo").permitAll());
 		http.authorizeHttpRequests(req -> req.anyRequest().authenticated());
-
 		return http.build();
 	}
 

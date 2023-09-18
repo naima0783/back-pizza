@@ -25,14 +25,14 @@ public class OrderDTO {
 	}
 
 	/**
-	 * @param user the user to set
+	 * @param pUser the user to set
 	 */
-	public void setUser(UserDto user) {
-		this.user = user;
+	public void setUser(final UserDto pUser) {
+		this.user = pUser;
 	}
 
 	/**
-	 * 
+	 * the orderdto's orderlinedto .
 	 */
 	private List<OrderlineDTO> orderline;
 
@@ -44,10 +44,10 @@ public class OrderDTO {
 	}
 
 	/**
-	 * @param orderline the orderline to set
+	 * @param pOrderline the orderline to set
 	 */
-	public void setOrderline(List<OrderlineDTO> orderline) {
-		this.orderline = orderline;
+	public void setOrderline(final List<OrderlineDTO> pOrderline) {
+		this.orderline = pOrderline;
 	}
 
 	/**
@@ -61,7 +61,7 @@ public class OrderDTO {
 	private Float total;
 
 	/**
-	 * 
+	 * the initializer of orderdto .
 	 */
 	public OrderDTO() {
 		super();
@@ -69,9 +69,9 @@ public class OrderDTO {
 	}
 
 	/**
-	 * @param user
-	 * @param date
-	 * @param total
+	 * initilizer of orderDTO from an order .
+	 *
+	 * @param order the order
 	 */
 	public OrderDTO(final Order order) {
 		super();
@@ -101,24 +101,24 @@ public class OrderDTO {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param pId the id to set
 	 */
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(final Long pId) {
+		this.id = pId;
 	}
 
 	/**
-	 * @param date the date to set
+	 * @param pDate the date to set
 	 */
-	public void setDate(String date) {
-		this.date = date;
+	public void setDate(final String pDate) {
+		this.date = pDate;
 	}
 
 	/**
-	 * @param total the total to set
+	 * @param pTotal the total to set
 	 */
-	public void setTotal(Float total) {
-		this.total = total;
+	public void setTotal(final Float pTotal) {
+		this.total = pTotal;
 	}
 
 }

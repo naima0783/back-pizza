@@ -6,17 +6,24 @@ import fr.idformation.mariopizza.security.utils.UserMapper;
 
 public class OrderMapper {
 
-	public static Order dtoToOrder(OrderDTO order) {
+	/**
+	 * transform a dto to an order.
+	 *
+	 * @param order the orderDTO
+	 * @return the order
+	 */
+	public static Order dtoToOrder(final OrderDTO order) {
 		return dtoToOrder(order, true);
 	}
 
 	/**
 	 * transform an Order's dto to an Entity.
 	 *
-	 * @param dto the orderDTO
+	 * @param addOrderLine the boolan if add or not
+	 * @param dto          the orderDTO
 	 * @return the order
 	 */
-	public static Order dtoToOrder(final OrderDTO dto, boolean addOrderLine) {
+	public static Order dtoToOrder(final OrderDTO dto, final boolean addOrderLine) {
 		Order order = null;
 
 		if (dto != null) {

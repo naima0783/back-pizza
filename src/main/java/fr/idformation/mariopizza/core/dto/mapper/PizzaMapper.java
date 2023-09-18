@@ -45,7 +45,13 @@ public class PizzaMapper {
 		return dto;
 	}
 
-	public static Pizza dtoToPizz(PizzaDTO dto) {
+	/**
+	 * transform a dto to a pizza .
+	 *
+	 * @param dto the dto
+	 * @return the pizza
+	 */
+	public static Pizza dtoToPizz(final PizzaDTO dto) {
 		Pizza pizza = null;
 
 		if (dto != null) {

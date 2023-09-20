@@ -18,6 +18,10 @@ public class UserDto {
 		this.role = user.getRoles().iterator().next().getName().name();
 	}
 
+	public UserDto() {
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * @return the address
 	 */

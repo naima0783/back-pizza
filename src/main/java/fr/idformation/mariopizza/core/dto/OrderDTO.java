@@ -58,7 +58,7 @@ public class OrderDTO {
 	/**
 	 * order's total.
 	 */
-	private Float total;
+	private double total;
 
 	/**
 	 * the initializer of orderdto .
@@ -96,7 +96,7 @@ public class OrderDTO {
 	/**
 	 * @return the total
 	 */
-	public Float getTotal() {
+	public double getTotal() {
 		return total;
 	}
 
@@ -115,10 +115,10 @@ public class OrderDTO {
 	}
 
 	/**
-	 * @param pTotal the total to set
+	 * @param d the total to set
 	 */
-	public void setTotal(final Float pTotal) {
-		this.total = pTotal;
+	public void setTotal(final double d) {
+		this.total = d;
 	}
 
 }

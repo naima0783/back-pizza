@@ -4,39 +4,38 @@ import fr.idformation.mariopizza.security.models.User;
 
 public class UserDto {
 
-	/**
-	 * the user's phonenumber.
+	/*
+	 * the user's phonenumber .
 	 */
 	private String phonenumber;
-
-	/**
-	 * the user's firstname.
+	/*
+	 * the user's firstname .
 	 */
 	private String firstname;
-	/**
+	/*
 	 * the user's lastname .
 	 */
 	private String lastname;
-	/**
-	 * the user's adress.
+	/*
+	 * the user's address .
 	 */
 	private String address;
-
-	/**
-	 * the user's password.
+	/*
+	 * the user's password .
 	 */
 	private String password;
-	/**
-	 * the user's role.
+	/*
+	 * the user's role .
 	 */
 	private String role;
 
 	/**
-	 * initializer of user'DTO .
 	 *
+	 * the constructor of UserDTO .
+	 * 
 	 * @param user the user
 	 */
-	public UserDto(final User user) {
+	public UserDto(User user) {
 		this.phonenumber = user.getPhonenumber();
 		this.firstname = user.getFirstname();
 		this.lastname = user.getLastname();
@@ -44,7 +43,7 @@ public class UserDto {
 	}
 
 	/**
-	 * initializer of user'DTO .
+	 * <<<<<<< HEAD initializer of user'DTO .
 	 *
 	 * @param pPhonenumber the phonenumber
 	 * @param pFirstname   the user's first
@@ -70,6 +69,8 @@ public class UserDto {
 	}
 
 	/**
+	 * Getter of adress .
+	 *
 	 * @return the address
 	 */
 	public String getAddress() {
@@ -77,6 +78,8 @@ public class UserDto {
 	}
 
 	/**
+	 * Getter of Password .
+	 *
 	 * @return the password
 	 */
 	public String getPassword() {
@@ -84,20 +87,26 @@ public class UserDto {
 	}
 
 	/**
-	 * @param pAddress the address to set
+	 * Setter of address .
+	 *
+	 * @param address the address to set
 	 */
 	public void setAddress(final String pAddress) {
 		this.address = pAddress;
 	}
 
 	/**
-	 * @param pPassword the password to set
+	 * Setter of password .
+	 *
+	 * @param password the password to set
 	 */
 	public void setPassword(final String pPassword) {
 		this.password = pPassword;
 	}
 
 	/**
+	 * Getter of password .
+	 *
 	 * @return the firstname
 	 */
 	public String getFirstname() {
@@ -105,6 +114,8 @@ public class UserDto {
 	}
 
 	/**
+	 * getter of username .
+	 *
 	 * @return the lastname
 	 */
 	public String getLastname() {
@@ -112,6 +123,8 @@ public class UserDto {
 	}
 
 	/**
+	 * getter of role .
+	 *
 	 * @return the role
 	 */
 	public String getRole() {
@@ -119,6 +132,8 @@ public class UserDto {
 	}
 
 	/**
+	 * Getter of th user'phonenumber
+	 *
 	 * @return the username
 	 */
 	public String getPhonenumber() {

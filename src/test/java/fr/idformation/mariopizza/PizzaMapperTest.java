@@ -2,6 +2,9 @@ package fr.idformation.mariopizza;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.util.Assert;
 
@@ -25,28 +28,76 @@ public class PizzaMapperTest {
 		Assert.isNull(dto, "dto should be null when entity is null");
 	}
 
+	
 	/**
-	 * Test to test transformation of a pizza to a pizzaDTO.
+	 * test Pizzas To Dtos .
 	 */
 	@Test
-	public void testEntityToDto() {
-		// given
-		final long id = 23;
-		final double price = 12.45;
-		Pizza pizza = new Pizza();
-		pizza.setName("4 fromage");
-		pizza.setId(id);
-		pizza.setDescription("tomate, frommage,thon");
-		pizza.setPrice(price);
+    public void testPizzasToDtos() {
+        // Setup
+        Pizza pizza1 = new Pizza() ;
+        pizza1.setId((long) 1);
+        pizza1.setName("Margherita");
+		pizza1.setDescription("tomate");
+		pizza1.setPrice(10.0);
+		pizza1.setImage("image1.jpg" );
+        Pizza pizza2 = new Pizza() ;
+        pizza1.setId((long) 2);
+        pizza1.setName("4 fromage");
+		pizza1.setDescription("tomate, fromage");
+		pizza1.setPrice(12.0);
+		pizza1.setImage("image2.jpg" );
+		
+        List<Pizza> pizzas = Arrays.asList(pizza1, pizza2);
 
-		PizzaDTO dto = PizzaMapper.pizzaToDto(pizza);
+        List<PizzaDTO> dtos = PizzaMapper.pizzasToDtos(pizzas);
 
-		assertThat(dto.getName()).isEqualTo("4 fromage");
-		assertThat(dto.getDescription()).isEqualTo("tomate, frommage,thon");
-		assertThat(dto.getPrice()).isEqualTo(price);
-		assertThat(dto.getId()).isEqualTo(id);
-		Assert.notNull(dto, "dto should be non null if the entity is not null");
+        assertThat(dtos).isNotNull();
+        assertThat(dtos).hasSize(2);
+        assertThat(dtos.get(0).getName()).isEqualTo(pizza1.getName());
+        assertThat(dtos.get(1).getDescription()).isEqualTo(pizza2.getDescription());
+        assertThat(PizzaMapper.pizzasToDtos(null)).isNull();
+    }
 
-	}
+    @Test
+    public void testPizzaToDto() {
+        
+    	Pizza pizza1 = new Pizza() ;
+        pizza1.setId((long) 1);
+        pizza1.setName("Margherita");
+		pizza1.setDescription("tomate");
+		pizza1.setPrice(10.0);
+		pizza1.setImage("image1.jpg" );
+       
+        PizzaDTO dto = PizzaMapper.pizzaToDto(pizza1);
+
+        assertThat(dto).isNotNull();
+        assertThat(dto.getName()).isEqualTo(pizza1.getName());
+        assertThat(dto.getDescription()).isEqualTo(pizza1.getDescription());
+        assertThat(PizzaMapper.pizzasToDtos(null)).isNull();
+    }
+    
+    @Test
+    public void testDtoToPizza() {
+        // Setup
+        PizzaDTO dto = new PizzaDTO() ;
+        dto.setId((long) 2);
+        dto.setName("4 fromage");
+		dto.setDescription("tomate, fromage");
+		dto.setPrice(12.0);
+		dto.setImage("image2.jpg" );
+		
+        Pizza pizza = PizzaMapper.dtoToPizza(dto);
+
+        // Verify
+        assertThat(pizza).isNotNull();
+        assertThat(pizza.getName()).isEqualTo(dto.getName());
+        assertThat(pizza.getDescription()).isEqualTo(dto.getDescription());
+
+        assertThat(PizzaMapper.dtoToPizza(null)).isNull();
+    }
+    
+
+  
 
 }

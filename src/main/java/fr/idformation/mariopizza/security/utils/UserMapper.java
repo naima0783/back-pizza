@@ -29,10 +29,10 @@ public class UserMapper {
 	}
 
 	/**
-	 * transform a clientDTO to a client.
+	 * transform a userDTO to an user.
 	 *
-	 * @param dto the clientDtop
-	 * @return the client
+	 * @param dto the userDtop
+	 * @return the user
 	 */
 	public static User dtoToEntity(final UserDto dto) {
 		User client = null;

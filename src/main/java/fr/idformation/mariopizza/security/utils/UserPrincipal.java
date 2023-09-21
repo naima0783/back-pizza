@@ -9,6 +9,7 @@ public final class UserPrincipal implements UserDetails {
 
 	private static final long serialVersionUID = 928073442559839991L;
 
+	
 	private String username;
 	private String password;
 	private boolean enabled;

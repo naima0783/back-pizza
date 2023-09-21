@@ -49,7 +49,7 @@ public class Order {
 	 * order's total.
 	 */
 	@Column(name = "total_amount")
-	private Float total;
+	private double total;
 
 	/**
 	 * the initializer of the user .
@@ -111,7 +111,7 @@ public class Order {
 	 *
 	 * @return the total
 	 */
-	public Float getTotal() {
+	public double getTotal() {
 		return total;
 	}
 
@@ -130,10 +130,10 @@ public class Order {
 	}
 
 	/**
-	 * @param pTotal the total to set
+	 * @param d the total to set
 	 */
-	public void setTotal(final Float pTotal) {
-		this.total = pTotal;
+	public void setTotal(final double d) {
+		this.total = d;
 	}
 
 	/**

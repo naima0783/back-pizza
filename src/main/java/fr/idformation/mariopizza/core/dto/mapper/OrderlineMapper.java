@@ -19,8 +19,10 @@ public class OrderlineMapper {
 
 		if (dto != null) {
 			entity = new OrderLine();
-			entity.setQuantite(dto.getQuantite());
-			entity.setPizza(PizzaMapper.dtoToPizz(dto.getPizza()));
+
+			entity.setId(dto.getId());
+			entity.setPizza(PizzaMapper.dtoToPizza(dto.getPizza()));
+			entity.setOrder(OrderMapper.dtoToOrder(dto.getOrder(), false));
 
 		}
 

@@ -4,20 +4,29 @@ import java.util.Date;
 
 public class JwtResponse {
 
+	/*
+	 * th jwt .
+	 */
 	private String jwt;
+	/*
+	 * the expiration's date of jwt .
+	 */
 	private Date expiration;
 
+	/*
+	 * the user in JWT .
+	 */
 	private UserDto user;
 
 	/**
-	 *
+	 *the Jwt response constructor ..
 	 */
 	public JwtResponse() {
 		super();
 	}
 
 	/**
-	 *
+	 *the JXT response constructor.
 	 * @param pJwt        the jwt token
 	 * @param pExpiration the expiration date of the jwt
 	 * @param pUser       the logged user
@@ -30,6 +39,8 @@ public class JwtResponse {
 	}
 
 	/**
+	 * Getter of jwt's expiration .
+	 * 
 	 * @return the expiration
 	 */
 	public Date getExpiration() {
@@ -37,6 +48,7 @@ public class JwtResponse {
 	}
 
 	/**
+	 * getter of jwtn.
 	 * @return the jwt
 	 */
 	public String getJwt() {
@@ -44,6 +56,7 @@ public class JwtResponse {
 	}
 
 	/**
+	 * Getter of jwt's user .
 	 * @return the user
 	 */
 	public UserDto getUser() {
@@ -51,6 +64,7 @@ public class JwtResponse {
 	}
 
 	/**
+	 * Setter of jwt's expiration .
 	 * @param expiration the expiration to set
 	 */
 	public void setExpiration(Date expiration) {
@@ -58,6 +72,7 @@ public class JwtResponse {
 	}
 
 	/**
+	 * Setter of Jwt.
 	 * @param jwt the jwt to set
 	 */
 	public void setJwt(String jwt) {
@@ -65,6 +80,7 @@ public class JwtResponse {
 	}
 
 	/**
+	 * Setter of jwt's User .
 	 * @param user the user to set
 	 */
 	public void setUser(UserDto user) {

@@ -12,9 +12,14 @@ import fr.idformation.mariopizza.core.dto.OrderDTO;
 import fr.idformation.mariopizza.core.dto.OrderlineDTO;
 import fr.idformation.mariopizza.core.dto.mapper.OrderMapper;
 import fr.idformation.mariopizza.security.Dto.UserDto;
-
+/**
+ * test of orderMapper
+ */
 public class OrderMapperTest {
 	
+	/**
+	 * test Dto To Order With Add OrderLine .
+	 * 	 */
 	@Test
     public void testDtoToOrderWithAddOrderLine() {
         // Setup
@@ -27,20 +32,19 @@ public class OrderMapperTest {
         dto.setDate("2023-09-20");
         dto.setTotal(150.0);
 
-        // Exercise
         Order order = OrderMapper.dtoToOrder(dto);
 
-        // Verify
         assertThat(order).isNotNull();
         assertThat(order.getId()).isEqualTo(dto.getId());
         assertThat(order.getDate()).isEqualTo(dto.getDate());
         assertThat(order.getTotal()).isEqualTo(dto.getTotal());
-        // Add more assertions as needed
 
-        // Test with null input
         assertThat(OrderMapper.dtoToOrder(null)).isNull();
     }
 
+	/**
+	 * test Dto To Order Without Add OrderLine .
+	 *  */
     @Test
     public void testDtoToOrderWithoutAddOrderLine() {
         UserDto userDto = new UserDto(); // Assuming UserDto has a default constructor
@@ -53,13 +57,11 @@ public class OrderMapperTest {
          
         Order order = OrderMapper.dtoToOrder(dto, false);
 
-        // Verify
         assertThat(order).isNotNull();
         assertThat(order.getId()).isEqualTo(dto.getId());
         assertThat(order.getDate()).isEqualTo(dto.getDate());
         assertThat(order.getTotal()).isEqualTo(dto.getTotal());
         
-        // Test with null input
         assertThat(OrderMapper.dtoToOrder(null, false)).isNull();
     }
 

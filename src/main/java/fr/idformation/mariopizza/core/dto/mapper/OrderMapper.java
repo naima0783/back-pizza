@@ -28,13 +28,12 @@ public class OrderMapper {
 
 		if (dto != null) {
 			order = new Order();
-			order.setId(dto.getId());
 			order.setDate(dto.getDate());
 			order.setUser(UserMapper.dtoToEntity(dto.getUser()));
 			order.setTotal(dto.getTotal());
 
 			if (addOrderLine) {
-				order.setOrderlines(OrderlineMapper.dtoToOrderLine(dto.getOrderline(), false));
+				order.setOrderlines(OrderlineMapper.dtoToOrderLines(dto.getOrderline()));
 
 			}
 

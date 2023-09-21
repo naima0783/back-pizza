@@ -19,9 +19,8 @@ public class OrderlineMapper {
 
 		if (dto != null) {
 			entity = new OrderLine();
-			entity.setId(dto.getId());
+			entity.setQuantite(dto.getQuantite());
 			entity.setPizza(PizzaMapper.dtoToPizz(dto.getPizza()));
-			entity.setOrder(OrderMapper.dtoToOrder(dto.getOrder(), false));
 
 		}
 
@@ -32,17 +31,15 @@ public class OrderlineMapper {
 	 * transform a list of orderlineDTO to a list of orderline. *
 	 *
 	 * @param orderlines the orderlines's DTO
-	 * @param b          boolean if we add the order
 	 * @return the list of orderLine
 	 */
-	public static List<OrderLine> dtoToOrderLine(final List<OrderlineDTO> orderlines, final boolean b) {
+	public static List<OrderLine> dtoToOrderLines(final List<OrderlineDTO> orderlines) {
 		List<OrderLine> dtos = null;
 
-		if (orderlines != null) {
-			dtos = new ArrayList<OrderLine>();
-			for (OrderlineDTO orderline : orderlines) {
-				dtos.add(dtoToOrderLine(orderline));
-			}
+		dtos = new ArrayList<OrderLine>();
+		for (OrderlineDTO orderline : orderlines) {
+			dtos.add(dtoToOrderLine(orderline));
+
 		}
 
 		return dtos;

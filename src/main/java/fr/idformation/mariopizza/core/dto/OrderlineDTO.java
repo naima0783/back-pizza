@@ -32,6 +32,16 @@ public class OrderlineDTO {
 	}
 
 	/**
+	 * @param pizza
+	 * @param quantite
+	 */
+	public OrderlineDTO(PizzaDTO pizza, int quantite) {
+		super();
+		this.pizza = pizza;
+		this.quantite = quantite;
+	}
+
+	/**
 	 * the initializer of orderline's dto.
 	 *
 	 * @param orderline the orderline to transform to dto .

@@ -21,7 +21,7 @@ public class UserMapper {
 		List<SimpleGrantedAuthority> authorities = user.getRoles().stream()
 				.map(role -> new SimpleGrantedAuthority("ROLE_" + role.getName())).collect(Collectors.toList());
 
-		userp.setUsername(user.getUsername());
+		userp.setUsername(user.getPhonenumber());
 		userp.setPassword(user.getPassword());
 		userp.setEnabled(true);
 		userp.setAuthorities(authorities);
@@ -39,8 +39,7 @@ public class UserMapper {
 
 		if (dto != null) {
 			client = new User();
-			client.setUsername(dto.getUsername());
-
+			client.setPhonenumber(dto.getPhonenumber());
 			client.setFirstname(dto.getFirstname());
 			client.setLastname(dto.getLastname());
 			client.setPassword(dto.getPassword());

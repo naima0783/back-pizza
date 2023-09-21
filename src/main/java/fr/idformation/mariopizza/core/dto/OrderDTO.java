@@ -2,9 +2,12 @@ package fr.idformation.mariopizza.core.dto;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import fr.idformation.mariopizza.core.domain.Order;
 import fr.idformation.mariopizza.security.Dto.UserDto;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class OrderDTO {
 	/**
 	 * the order's id .
@@ -32,22 +35,35 @@ public class OrderDTO {
 	}
 
 	/**
+	 * @param user
+	 * @param date
+	 * @param total
+	 */
+	public OrderDTO(UserDto user, List<OrderlineDTO> orderlines, String date, Float total) {
+		super();
+		this.orderlines = orderlines;
+		this.user = user;
+		this.date = date;
+		this.total = total;
+	}
+
+	/**
 	 * the orderdto's orderlinedto .
 	 */
-	private List<OrderlineDTO> orderline;
+	private List<OrderlineDTO> orderlines;
 
 	/**
 	 * @return the orderline
 	 */
 	public List<OrderlineDTO> getOrderline() {
-		return orderline;
+		return this.orderlines;
 	}
 
 	/**
 	 * @param pOrderline the orderline to set
 	 */
 	public void setOrderline(final List<OrderlineDTO> pOrderline) {
-		this.orderline = pOrderline;
+		this.orderlines = pOrderline;
 	}
 
 	/**

@@ -7,18 +7,21 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.idformation.mariopizza.MariopizzaApplication;
 import fr.idformation.mariopizza.security.Dto.JwtResponse;
 import fr.idformation.mariopizza.security.Dto.LoginRequest;
 import fr.idformation.mariopizza.security.Dto.UserDto;
 import fr.idformation.mariopizza.security.jwt.JwtProvider;
 import fr.idformation.mariopizza.security.models.User;
 import fr.idformation.mariopizza.security.service.impl.UserDetailsServiceImpl;
+import fr.idformation.mariopizza.security.utils.UserMapper;
 import jakarta.validation.Valid;
 
 /**
@@ -30,7 +33,8 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = { "http://localhost:3000", "http://192.168.1.117:8081" }, maxAge = 3600)
+@CrossOrigin(origins = { "http://localhost:3000", "http://192.168.1.114:8081",
+		"127.0.0.1:8080" }, maxAge = MariopizzaApplication.AGE_MAX)
 public final class AuthController {
 
 	/** token header to use in JWT. */
@@ -70,6 +74,22 @@ public final class AuthController {
 				.ok(new JwtResponse(tokenHeader + " " + jwt, tokenProvider.getExpiryDate(jwt), new UserDto(user)));
 	}
 
+	/**
+	 * Creation of an user.
+	 *
+	 * @param user the user
+	 * @return true if succeed
+	 */
+	@PostMapping("/save")
+	public boolean save(@Validated @RequestBody final UserDto order) {
+		try {
+			userService.save(UserMapper.dtoToEntity(order));
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 //	/**
 //	 *
 //	 * @param username a username

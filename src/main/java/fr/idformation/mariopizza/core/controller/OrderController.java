@@ -14,9 +14,9 @@ import fr.idformation.mariopizza.core.dto.mapper.OrderMapper;
 import fr.idformation.mariopizza.core.service.impl.OrderService;
 
 @RestController
-@RequestMapping("/order")
-@CrossOrigin(origins = { "http://192.168.1.117:8081",
-		"http://192.168.1.117:8081" }, maxAge = MariopizzaApplication.AGE_MAX)
+@RequestMapping("/orderss")
+@CrossOrigin(origins = { "http://localhost:3000", "http://192.168.1.114:8081",
+		"127.0.0.1:8080" }, maxAge = MariopizzaApplication.AGE_MAX)
 public class OrderController {
 
 	/**
@@ -34,7 +34,7 @@ public class OrderController {
 	@PostMapping("/save")
 	public boolean save(@Validated @RequestBody final OrderDTO order) {
 		try {
-			orderService.save(OrderMapper.dtoToOrder(order));
+			orderService.save(OrderMapper.dtoToOrder(order, true));
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();

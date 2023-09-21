@@ -36,4 +36,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 				.orElseThrow(() -> new UsernameNotFoundException("User NOT Found"));
 		return user;
 	}
+
+	/**
+	 * Service to Save a user.
+	 *
+	 * @param user the user
+	 */
+	public void save(final User user) {
+		userRepository.save(user);
+
+	}
 }

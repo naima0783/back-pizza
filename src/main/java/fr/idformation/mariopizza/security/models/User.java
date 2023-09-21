@@ -106,7 +106,11 @@ public class User {
 		return roles;
 	}
 
-	public String getUsername() {
+	/**
+	 * 
+	 * @return
+	 */
+	public String getPhonenumber() {
 		return phonenumber;
 	}
 
@@ -136,7 +140,12 @@ public class User {
 		this.roles = roles;
 	}
 
-	public void setUsername(String username) {
+	/**
+	 * setter of user's phonenumber.
+	 *
+	 * @param username
+	 */
+	public void setPhonenumber(String username) {
 		this.phonenumber = username;
 	}
 }

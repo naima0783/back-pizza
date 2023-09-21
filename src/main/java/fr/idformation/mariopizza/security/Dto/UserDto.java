@@ -4,13 +4,36 @@ import fr.idformation.mariopizza.security.models.User;
 
 public class UserDto {
 
+	/*
+	 * the user's phonenumber .
+	 */
 	private String phonenumber;
+	/*
+	 * the user's firstname .
+	 */
 	private String firstname;
+	/*
+	 * the user's lastname .
+	 */
 	private String lastname;
+	/*
+	 * the user's address .
+	 */
 	private String address;
+	/*
+	 * the user's password .
+	 */
 	private String password;
+	/*
+	 * the user's role .
+	 */
 	private String role;
 
+	/**
+	 * the constructor of UserDTO .
+	 * 
+	 * @param user the user 
+	 */
 	public UserDto(User user) {
 		this.phonenumber = user.getUsername();
 		this.firstname = user.getFirstname();
@@ -18,11 +41,15 @@ public class UserDto {
 		this.role = user.getRoles().iterator().next().getName().name();
 	}
 
+	/**
+	 * the constructor of UserDTO .
+	 */
 	public UserDto() {
 		// TODO Auto-generated constructor stub
 	}
 
 	/**
+	 * Getter of adress .
 	 * @return the address
 	 */
 	public String getAddress() {
@@ -30,6 +57,7 @@ public class UserDto {
 	}
 
 	/**
+	 * Getter of Password .
 	 * @return the password
 	 */
 	public String getPassword() {
@@ -37,6 +65,7 @@ public class UserDto {
 	}
 
 	/**
+	 * Setter of address .
 	 * @param address the address to set
 	 */
 	public void setAddress(String address) {
@@ -44,6 +73,7 @@ public class UserDto {
 	}
 
 	/**
+	 * Setter of password .
 	 * @param password the password to set
 	 */
 	public void setPassword(String password) {
@@ -51,6 +81,7 @@ public class UserDto {
 	}
 
 	/**
+	 * Getter of password .
 	 * @return the firstname
 	 */
 	public String getFirstname() {
@@ -58,6 +89,7 @@ public class UserDto {
 	}
 
 	/**
+	 * getter of username .
 	 * @return the lastname
 	 */
 	public String getLastname() {
@@ -65,6 +97,7 @@ public class UserDto {
 	}
 
 	/**
+	 * getter of role .
 	 * @return the role
 	 */
 	public String getRole() {
@@ -72,6 +105,7 @@ public class UserDto {
 	}
 
 	/**
+	 * Getter of th user'phonenumber 
 	 * @return the username
 	 */
 	public String getUsername() {

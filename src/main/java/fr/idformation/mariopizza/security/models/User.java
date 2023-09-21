@@ -6,6 +6,7 @@ import java.util.Set;
 
 import org.springframework.lang.NonNull;
 
+import fr.idformation.mariopizza.MariopizzaApplication;
 import fr.idformation.mariopizza.core.domain.Order;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -23,30 +24,51 @@ import jakarta.validation.constraints.Size;
 @Entity
 @Table(name = "users", uniqueConstraints = { @UniqueConstraint(columnNames = "phonenumber") })
 public class User {
+	/**
+	 * the user's id .
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	/**
+	 * the user's phonenumber .
+	 */
 	@NonNull
 	@Size(max = 20)
 	private String phonenumber;
 
+	/**
+	 * the user's address.
+	 */
 	@NonNull
-	@Size(max = 120)
+	@Size(max = MariopizzaApplication.SIZE_MAX)
 	private String address;
 
+	/**
+	 * the user's password .
+	 */
 	@NonNull
-	@Size(max = 120)
+	@Size(max = MariopizzaApplication.SIZE_MAX)
 	private String password;
 
+	/**
+	 * the user's firstname .
+	 */
 	@NonNull
 	@Size(max = 100)
 	private String firstname;
 
+	/**
+	 * the user's lastname.
+	 */
 	@NonNull
 	@Size(max = 100)
 	private String lastname;
 
+	/**
+	 * the user's order.
+	 */
 	@OneToMany(mappedBy = "user")
 	private List<Order> orders;
 
@@ -58,24 +80,41 @@ public class User {
 	}
 
 	/**
-	 * @param address the address to set
+	 * @param pAddress the address to set
 	 */
-	public void setAddress(String address) {
-		this.address = address;
+	public void setAddress(final String pAddress) {
+		this.address = pAddress;
 	}
 
+	/**
+	 * the user's role .
+	 */
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
 
+	/**
+	 * the user's Connstructor .
+	 */
 	public User() {
 	}
 
-	public User(String username, String email, String password) {
+	/**
+	 * the User's constructor.
+	 *
+	 * @param username  te user's username
+	 * @param pPassword the user's password
+	 */
+	public User(final String username, final String pPassword) {
 		this.phonenumber = username;
-		this.password = password;
+		this.password = pPassword;
 	}
 
+	/**
+	 * the getter of user's phonenumber .
+	 *
+	 * @return the user's phonenumber
+	 */
 	public String getEmail() {
 		return phonenumber;
 	}
@@ -87,6 +126,11 @@ public class User {
 		return firstname;
 	}
 
+	/**
+	 * Geter of user's Id.
+	 *
+	 * @return the user's id
+	 */
 	public Long getId() {
 		return id;
 	}
@@ -98,54 +142,80 @@ public class User {
 		return lastname;
 	}
 
+	/**
+	 * Getter of user's password .
+	 *
+	 * @return the user's password
+	 */
 	public String getPassword() {
 		return password;
 	}
 
+	/**
+	 * Getter of user's roles .
+	 *
+	 * @return the user's role
+	 */
 	public Set<Role> getRoles() {
 		return roles;
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Getter of user's Phonenumber.
+	 *
+	 * @return the user's phonenumber
 	 */
 	public String getPhonenumber() {
 		return phonenumber;
 	}
 
 	/**
-	 * @param firstname the firstname to set
+	 * @param pFirstname the firstname to set
 	 */
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
+	public void setFirstname(final String pFirstname) {
+		this.firstname = pFirstname;
 	}
 
 	/**
-	 * @param lastname the lastname to set
+	 * the setter of user's id .
+	 *
+	 * @param pId the user's id .
 	 */
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setId(final Long pId) {
+		this.id = pId;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	/**
+	 * @param pLastname the lastname to set
+	 */
+	public void setLastname(final String pLastname) {
+		this.lastname = pLastname;
 	}
 
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
+	/**
+	 * Setter of user's password .
+	 *
+	 * @param pPassword
+	 */
+	public void setPassword(final String pPassword) {
+		this.password = pPassword;
+	}
+
+	/**
+	 * Setter of user's role.
+	 *
+	 * @param pRoles the user's role .
+	 */
+	public void setRoles(final Set<Role> pRoles) {
+		this.roles = pRoles;
 	}
 
 	/**
 	 * setter of user's phonenumber.
 	 *
-	 * @param username
+	 * @param pUsername
 	 */
-	public void setPhonenumber(String username) {
-		this.phonenumber = username;
+	public void setPhonenumber(final String pUsername) {
+		this.phonenumber = pUsername;
 	}
 }

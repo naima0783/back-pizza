@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.idformation.mariopizza.MariopizzaApplication;
 import fr.idformation.mariopizza.security.Dto.JwtResponse;
 import fr.idformation.mariopizza.security.Dto.LoginRequest;
 import fr.idformation.mariopizza.security.Dto.UserDto;
@@ -32,7 +33,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = { "http://172.20.10.2:8081" }, maxAge = 3600)
+@CrossOrigin(origins = { "http://172.20.10.2:8081" }, maxAge = MariopizzaApplication.AGE_MAX)
 public final class AuthController {
 
 	/** token header to use in JWT. */
@@ -80,9 +81,9 @@ public final class AuthController {
 	 * @return true if succeed
 	 */
 	@PostMapping("/save")
-	public boolean save(@Validated @RequestBody final UserDto order) {
+	public boolean save(@Validated @RequestBody final UserDto user) {
 		try {
-			userService.save(UserMapper.dtoToEntity(order));
+			userService.save(UserMapper.dtoToEntity(user));
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();

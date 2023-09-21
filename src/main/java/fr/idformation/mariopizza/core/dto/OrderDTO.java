@@ -35,19 +35,6 @@ public class OrderDTO {
 	}
 
 	/**
-	 * @param user
-	 * @param date
-	 * @param total
-	 */
-	public OrderDTO(UserDto user, List<OrderlineDTO> orderlines, String date, Float total) {
-		super();
-		this.orderlines = orderlines;
-		this.user = user;
-		this.date = date;
-		this.total = total;
-	}
-
-	/**
 	 * the orderdto's orderlinedto .
 	 */
 	private List<OrderlineDTO> orderlines;
@@ -81,7 +68,6 @@ public class OrderDTO {
 	 */
 	public OrderDTO() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**

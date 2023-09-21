@@ -9,10 +9,21 @@ public final class UserPrincipal implements UserDetails {
 
 	private static final long serialVersionUID = 928073442559839991L;
 
-	
+	/**
+	 * the user principal's username .
+	 */
 	private String username;
+	/**
+	 * the user principal's password .
+	 */
 	private String password;
+	/**
+	 * a boolean enabled if connexion.
+	 */
 	private boolean enabled;
+	/**
+	 * the authoriries .
+	 */
 	private Collection<? extends GrantedAuthority> authorities;
 
 	@Override
@@ -50,19 +61,39 @@ public final class UserPrincipal implements UserDetails {
 		return enabled;
 	}
 
-	public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
-		this.authorities = authorities;
+	/**
+	 * Setter of Authorities.
+	 *
+	 * @param pAuthorities
+	 */
+	public void setAuthorities(final Collection<? extends GrantedAuthority> pAuthorities) {
+		this.authorities = pAuthorities;
 	}
 
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
+	/**
+	 * Setter of Enabled.
+	 *
+	 * @param pEnabled enabled
+	 */
+	public void setEnabled(final boolean pEnabled) {
+		this.enabled = pEnabled;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	/**
+	 * Setter of password .
+	 *
+	 * @param pPassword
+	 */
+	public void setPassword(final String pPassword) {
+		this.password = pPassword;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	/**
+	 * Setter of username .
+	 *
+	 * @param pUsername
+	 */
+	public void setUsername(final String pUsername) {
+		this.username = pUsername;
 	}
 }

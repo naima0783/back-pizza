@@ -18,17 +18,35 @@ import io.jsonwebtoken.security.Keys;
 
 @Component
 public class JwtProvider {
+	/**
+	 * the jwt secret key .
+	 */
 	@Value("${app.jwtSecretKey}")
 	private String secret;
 
+	/**
+	 * the jwt expiration .
+	 */
 	@Value("${app.jwtExpirationInMs}")
 	private int jwtExpirationInMs;
 
+	/**
+	 * the jwt key .
+	 */
 	private Key key;
 
+	/**
+	 * the logger.
+	 */
 	protected final Log logger = LogFactory.getLog(getClass());
 
-	public String generateToken(Authentication authentication) {
+	/**
+	 * the generator of Token .
+	 *
+	 * @param authentication the authentification
+	 * @return the token
+	 */
+	public String generateToken(final Authentication authentication) {
 		UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
 		Date now = new Date();
 		Date expiryDate = new Date(now.getTime() + jwtExpirationInMs);
@@ -37,7 +55,13 @@ public class JwtProvider {
 				.signWith(getSigningKey(), SignatureAlgorithm.HS512).compact();
 	}
 
-	public Date getExpiryDate(String token) {
+	/**
+	 * Getter of the Expiration Date .
+	 *
+	 * @param token the token
+	 * @return the expiration's date
+	 */
+	public Date getExpiryDate(final String token) {
 		Claims claims = Jwts.parserBuilder().setSigningKey(getSigningKey()).build().parseClaimsJws(token).getBody();
 		return claims.getExpiration();
 	}
@@ -50,12 +74,24 @@ public class JwtProvider {
 		return key;
 	}
 
-	public String getUserUsernameFromJWT(String token) {
+	/**
+	 * Getter of user's username from JWt.
+	 *
+	 * @param token the token
+	 * @return the user's username
+	 */
+	public String getUserUsernameFromJWT(final String token) {
 		Claims claims = Jwts.parserBuilder().setSigningKey(getSigningKey()).build().parseClaimsJws(token).getBody();
 		return claims.getSubject();
 	}
 
-	public boolean validateToken(String authToken) {
+	/**
+	 * Say if the token is valide.
+	 *
+	 * @param authToken the token
+	 * @return true if token valid
+	 */
+	public boolean validateToken(final String authToken) {
 		try {
 			Jwts.parserBuilder().setSigningKey(getSigningKey()).build().parseClaimsJws(authToken);
 			return true;

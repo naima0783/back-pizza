@@ -32,13 +32,13 @@ public class OrderlineDTO {
 	}
 
 	/**
-	 * @param pizza
-	 * @param quantite
+	 * @param pPizza
+	 * @param pQuantite
 	 */
-	public OrderlineDTO(PizzaDTO pizza, int quantite) {
+	public OrderlineDTO(final PizzaDTO pPizza, final int pQuantite) {
 		super();
-		this.pizza = pizza;
-		this.quantite = quantite;
+		this.pizza = pPizza;
+		this.quantite = pQuantite;
 	}
 
 	/**

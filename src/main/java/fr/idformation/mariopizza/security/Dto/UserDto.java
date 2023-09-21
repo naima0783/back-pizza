@@ -4,27 +4,27 @@ import fr.idformation.mariopizza.security.models.User;
 
 public class UserDto {
 
-	/*
+	/**
 	 * the user's phonenumber .
 	 */
 	private String phonenumber;
-	/*
+	/**
 	 * the user's firstname .
 	 */
 	private String firstname;
-	/*
+	/**
 	 * the user's lastname .
 	 */
 	private String lastname;
-	/*
+	/**
 	 * the user's address .
 	 */
 	private String address;
-	/*
+	/**
 	 * the user's password .
 	 */
 	private String password;
-	/*
+	/**
 	 * the user's role .
 	 */
 	private String role;
@@ -32,10 +32,10 @@ public class UserDto {
 	/**
 	 *
 	 * the constructor of UserDTO .
-	 * 
+	 *
 	 * @param user the user
 	 */
-	public UserDto(User user) {
+	public UserDto(final User user) {
 		this.phonenumber = user.getPhonenumber();
 		this.firstname = user.getFirstname();
 		this.lastname = user.getLastname();
@@ -89,7 +89,7 @@ public class UserDto {
 	/**
 	 * Setter of address .
 	 *
-	 * @param address the address to set
+	 * @param pAddress the address to set
 	 */
 	public void setAddress(final String pAddress) {
 		this.address = pAddress;
@@ -98,7 +98,7 @@ public class UserDto {
 	/**
 	 * Setter of password .
 	 *
-	 * @param password the password to set
+	 * @param pPassword the password to set
 	 */
 	public void setPassword(final String pPassword) {
 		this.password = pPassword;
@@ -132,7 +132,7 @@ public class UserDto {
 	}
 
 	/**
-	 * Getter of th user'phonenumber
+	 * Getter of th user'phonenumber.
 	 *
 	 * @return the username
 	 */

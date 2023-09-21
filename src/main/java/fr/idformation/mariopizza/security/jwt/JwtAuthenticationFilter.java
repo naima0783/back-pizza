@@ -19,17 +19,29 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
+	/**
+	 * the token Header.
+	 */
 	@Value("${app.jwtTokenHeader}")
 	private String tokenHeader;
 
+	/**
+	 * the Jwt Provider .
+	 */
 	@Autowired
 	private JwtProvider tokenProvider;
+	/**
+	 * the user's service .
+	 */
 	@Autowired
 	private UserDetailsService userDetailsService;
 
+	/**
+	 * the Filter Internal.
+	 */
 	@Override
-	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
-			throws ServletException, IOException {
+	protected void doFilterInternal(final HttpServletRequest request, final HttpServletResponse response,
+			final FilterChain filterChain) throws ServletException, IOException {
 		try {
 			String jwt = getJwtFromRequest(request);
 			if (StringUtils.hasText(jwt) && tokenProvider.validateToken(jwt)) {
@@ -46,7 +58,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 		filterChain.doFilter(request, response);
 	}
 
-	private String getJwtFromRequest(HttpServletRequest request) {
+	private String getJwtFromRequest(final HttpServletRequest request) {
 		String bearerToken = request.getHeader("Authorization");
 		if (StringUtils.hasText(bearerToken) && bearerToken.startsWith(tokenHeader)) {
 			return bearerToken.substring(tokenHeader.length() + 1, bearerToken.length());

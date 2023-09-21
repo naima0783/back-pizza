@@ -2,18 +2,26 @@ package fr.idformation.mariopizza.security.Dto;
 
 public class LoginRequest {
 
+	/**
+	 * the user 's username .
+	 */
 	private String username;
 
+	/**
+	 * the user's password.
+	 */
 	private String password;
 
 	/**
-	 *
+	 * the constructor of LoginRequest .
 	 */
 	public LoginRequest() {
 		super();
 	}
 
 	/**
+	 * Setter of Password.
+	 *
 	 * @return the password
 	 */
 	public String getPassword() {
@@ -21,6 +29,8 @@ public class LoginRequest {
 	}
 
 	/**
+	 * Getter of Username .
+	 *
 	 * @return the username
 	 */
 	public String getUsername() {
@@ -28,17 +38,19 @@ public class LoginRequest {
 	}
 
 	/**
-	 * @param password the password to set
+	 * Setter of Password .
+	 *
+	 * @param pPassword the password to set
 	 */
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassword(final String pPassword) {
+		this.password = pPassword;
 	}
 
 	/**
-	 * @param username the username to set
+	 * @param pUsername the username to set
 	 */
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUsername(final String pUsername) {
+		this.username = pUsername;
 	}
 
 }

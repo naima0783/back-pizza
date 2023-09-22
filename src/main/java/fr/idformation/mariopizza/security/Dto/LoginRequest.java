@@ -5,7 +5,7 @@ public class LoginRequest {
 	/**
 	 * the user 's username .
 	 */
-	private String username;
+	private String phonenumber;
 
 	/**
 	 * the user's password.
@@ -34,7 +34,7 @@ public class LoginRequest {
 	 * @return the username
 	 */
 	public String getUsername() {
-		return username;
+		return phonenumber;
 	}
 
 	/**
@@ -50,7 +50,7 @@ public class LoginRequest {
 	 * @param pUsername the username to set
 	 */
 	public void setUsername(final String pUsername) {
-		this.username = pUsername;
+		this.phonenumber = pUsername;
 	}
 
 }

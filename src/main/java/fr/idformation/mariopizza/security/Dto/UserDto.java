@@ -48,7 +48,7 @@ public class UserDto {
 	}
 
 	/**
-	 * <<<<<<< HEAD initializer of user'DTO .
+	 *initializer of user'DTO .
 	 *
 	 * @param pPhonenumber the phonenumber
 	 * @param pFirstname   the user's first
@@ -57,13 +57,14 @@ public class UserDto {
 	 * @param pPassword
 	 */
 	public UserDto(final String pPhonenumber, final String pFirstname, final String pLastname, final String pAddress,
-			final String pPassword) {
+			final String pPassword, final String pRole ) {
 		super();
 		this.phonenumber = pPhonenumber;
 		this.firstname = pFirstname;
 		this.lastname = pLastname;
 		this.address = pAddress;
 		this.password = pPassword;
+		this.role= pRole ;
 	}
 
 	/**

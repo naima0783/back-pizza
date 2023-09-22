@@ -49,6 +49,7 @@ public class SecurityConfiguration {
 		// set required security based on request
 		http.authorizeHttpRequests(req -> req.requestMatchers("/auth/**").permitAll());
 		http.authorizeHttpRequests(req -> req.anyRequest().authenticated());
+	
 		return http.build();
 	}
 

@@ -16,7 +16,7 @@ import fr.idformation.mariopizza.core.service.impl.PizzaService;
 @RestController
 @RequestMapping("/pizza")
 
-@CrossOrigin(origins = { "http://localhost:3000", "http://172.20.10.2:8081" }, maxAge = MariopizzaApplication.AGE_MAX)
+@CrossOrigin(origins = { "http://localhost:3000","http://192.168.1.108:8081", "http://172.20.10.2:8081" }, maxAge = MariopizzaApplication.AGE_MAX)
 public class PizzaController {
 
 	/**

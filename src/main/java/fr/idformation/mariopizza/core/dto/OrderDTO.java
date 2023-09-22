@@ -42,14 +42,14 @@ public class OrderDTO {
 	/**
 	 * @return the orderline
 	 */
-	public List<OrderlineDTO> getOrderline() {
+	public List<OrderlineDTO> getOrderlines() {
 		return this.orderlines;
 	}
 
 	/**
 	 * @param pOrderline the orderline to set
 	 */
-	public void setOrderline(final List<OrderlineDTO> pOrderline) {
+	public void setOrderlines(final List<OrderlineDTO> pOrderline) {
 		this.orderlines = pOrderline;
 	}
 

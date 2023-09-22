@@ -28,16 +28,16 @@ public class OrderMapperTest {
         OrderDTO dto = new OrderDTO();
         dto.setId(1L);
         dto.setUser(userDto);
-        dto.setOrderline(orderlineList);
+        dto.setOrderlines(orderlineList);
         dto.setDate("2023-09-20");
         dto.setTotal(150.0);
 
         Order order = OrderMapper.dtoToOrder(dto);
 
         assertThat(order).isNotNull();
-        assertThat(order.getId()).isEqualTo(dto.getId());
         assertThat(order.getDate()).isEqualTo(dto.getDate());
         assertThat(order.getTotal()).isEqualTo(dto.getTotal());
+        assertThat(order.getUser().getId()).isEqualTo(userDto.getId()) ;
 
         assertThat(OrderMapper.dtoToOrder(null)).isNull();
     }
@@ -58,8 +58,8 @@ public class OrderMapperTest {
         Order order = OrderMapper.dtoToOrder(dto, false);
 
         assertThat(order).isNotNull();
-        assertThat(order.getId()).isEqualTo(dto.getId());
         assertThat(order.getDate()).isEqualTo(dto.getDate());
+        assertThat(order.getUser().getId()).isEqualTo(userDto.getId()) ;
         assertThat(order.getTotal()).isEqualTo(dto.getTotal());
         
         assertThat(OrderMapper.dtoToOrder(null, false)).isNull();

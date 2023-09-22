@@ -5,6 +5,11 @@ import fr.idformation.mariopizza.security.models.User;
 public class UserDto {
 
 	/**
+	 * user's id
+	 */
+	private Long id ; 
+	
+	/**
 	 * the user's phonenumber .
 	 */
 	private String phonenumber;
@@ -166,6 +171,14 @@ public class UserDto {
 	 */
 	public void setPhonenumber(final String username) {
 		this.phonenumber = username;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 }

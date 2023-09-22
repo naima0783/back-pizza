@@ -33,7 +33,7 @@ public class OrderMapper {
 			order.setTotal(dto.getTotal());
 
 			if (addOrderLine) {
-				order.setOrderlines(OrderlineMapper.dtoToOrderLines(dto.getOrderline()));
+				order.setOrderlines(OrderlineMapper.dtoToOrderLines(dto.getOrderlines()));
 
 			}
 

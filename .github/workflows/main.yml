@@ -36,14 +36,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: anaima/marriopizza:latest # Replace 'anaima' with your DockerHub username
+          tags: anaima/marriopizza:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
-
-      # - name: Deploy to Server
-      #   run: |
-      #     # Add your deployment commands here
-      #     # For example, SSH to your server and pull the new Docker image
-      #     # ssh user@server "docker pull anaima/marriopizza:latest && docker run -d --name marriopizza -p 80:8080 anaima/marriopizza:latest"
-      #   env:
-      #     DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
